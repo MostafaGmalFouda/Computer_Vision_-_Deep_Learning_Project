@@ -1,6 +1,3 @@
-from IPython.display import Markdown, display
-
-readme_md = """
 # 🖐️ Hand Sign Recognition using Deep Learning & Computer Vision
 
 This project presents a complete **Computer Vision + Deep Learning pipeline** for recognizing hand signs (alphabets) from images and real-time webcam input.
