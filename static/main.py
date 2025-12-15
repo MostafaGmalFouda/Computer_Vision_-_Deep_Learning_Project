@@ -24,12 +24,12 @@ import mediapipe as mp # MediaPipe
 # 1. Configuration / Path Settings
 # ==========================================
 
-RAW_DATASET_PATH = r"D:\ASL_Project\dataset\Train_Alphabet" 
-PROCESSED_DATASET_PATH = r"D:\ASL_Project\dataset\Train_Alphabet_Processed_128"
-TEST_FOLDER_PATH = r'E:\Computer_Vision_-_Deep_Learning_Project\dataset\Test_Alphabet'
+RAW_DATASET_PATH = r"D:\Gemy Study\FAI\Deep Learning\Project\data\Train_Alphabet" 
+PROCESSED_DATASET_PATH = r"D:\Gemy Study\FAI\Deep Learning\Project\processed_dataset_final"
+TEST_FOLDER_PATH = r'D:\Gemy Study\FAI\Deep Learning\Project\data\Test_Alphabet'
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(current_dir, r'E:\Computer_Vision_-_Deep_Learning_Project\Model\best_model.pth') 
+MODEL_PATH = os.path.join(current_dir, r'D:\Gemy Study\FAI\Deep Learning\Project\Model\best_model.pth') 
 
 # ==========================================
 # 1.5 MediaPipe Setup

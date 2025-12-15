@@ -10,6 +10,15 @@ The system includes **data exploration, preprocessing, augmentation, CNN trainin
 Goal: Build a robust hand sign recognition system.
 
 ---
+## 📂 Dataset
+
+You can download the dataset from the following link:
+
+[Download ASL Hand Sign Dataset](https://drive.google.com/drive/folders/1FfNud8I6dCAJxmOqXhhuo45CkpinfuuD)
+
+**Notes:**
+- The dataset contains images of hand signs for all 26 alphabets plus a blank class.
+- Organize the dataset into folders per class as expected by the code:
 
 ## 🔍 Data Exploration (EDA)
 
