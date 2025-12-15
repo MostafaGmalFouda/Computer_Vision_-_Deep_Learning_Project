@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Detection Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h2>ASL Dashboard</h2>
+            <button class="nav-button active" data-page="home-page">Home</button> 
+            <button class="nav-button" data-page="data-page">Data</button>
+            <button class="nav-button" data-page="user-test-page">Live Camera</button>
+            <button class="nav-button" data-page="testing-page">Model Testing</button>
+        </div>
+
+        <div class="main-content">
+            <h1>ASL Detection Project</h1>
+
+            <div id="home-page" class="page-content active-page">
+                <img src="Home.jpg" alt="ASL Alphabet" class="asl-alphabet-image">
+            </div>
+
+            <div id="data-page" class="page-content">
+                <div class="data-controls">
+                    <button id="before-process-btn" class="data-toggle">Before Processing</button>
+                    <button id="after-process-btn" class="data-toggle">After Processing</button>
+                    <label for="class-select">Class:</label>
+                    <select id="class-select"></select>
+                </div>
+                <div class="pagination-controls">
+                    <button id="prev-page-btn" disabled>Previous</button>
+                    <span id="page-info">Page 0 of 0</span>
+                    <button id="next-page-btn" disabled>Next</button>
+                </div>
+                <div class="image-display">Please select a Class.</div>
+            </div>
+
+            <div id="user-test-page" class="page-content">
+                <div class="test-header">
+                    <button id="camera-toggle-btn" class="icon-button" title="Toggle Camera">
+                        <span id="camera-icon">📸</span> 
+                    </button>
+                    <span class="tag">Predicted: <span id="predicted-class">-</span></span>
+                    <span class="tag">Conf: <span id="confidence-value">0</span>% <span id="confidence-emoji"></span></span> 
+                </div>
+                
+                <div class="camera-feed-container">
+                    <div class="camera-feed">
+                        <p id="camera-status-text">Camera Off</p>
+                        <video id="live-camera-feed" autoplay playsinline style="display: none;"></video>
+                    </div>
+                    <img id="cropped-hand-display" src="" alt="Cropped Hand" class="cropped-hand-preview" style="display:none;">
+                </div>
+            </div>
+
+            <div id="testing-page" class="page-content">
+                <div class="test-container" style="text-align: center;">
+                    <button id="random-test-btn" class="action-btn">🎲 Test Random Image</button>
+                    
+                    <div id="test-result-area" style="margin-top: 20px; display: none;">
+                        <img id="test-image-display" src="" alt="Test Image" style="max-width: 400px; border-radius: 10px; border: 2px solid #333;">
+                        
+                        <div class="result-box">
+                            <p>Actual: <span id="test-actual" style="font-weight: bold;">-</span></p>
+                            <p>Predicted: <span id="test-predicted" style="font-weight: bold;">-</span></p>
+                            <div id="test-status" class="status-badge">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

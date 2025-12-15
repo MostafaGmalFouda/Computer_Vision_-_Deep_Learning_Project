@@ -1,0 +1,260 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ECEFF1;
+    overflow: hidden;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFFFF;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #607D8B;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    color: #FFECB3;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.nav-button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    cursor: pointer;
+    color: #CFD8DC;
+    background: transparent;
+}
+
+.nav-button.active {
+    background-color: #FF9800;
+    color: #1A237E;
+    font-weight: bold;
+}
+
+.nav-button:hover:not(.active) {
+    background-color: #78909C;
+    color: #fff;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px 40px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.page-content {
+    display: none;
+}
+
+.active-page {
+    display: block;
+}
+
+.asl-alphabet-image {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+/* Data Page */
+.data-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.data-toggle {
+    padding: 8px 15px;
+    border: 1px solid #B0B0B0;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.active-toggle {
+    background: #1A237E;
+    color: #FF9800;
+    font-weight: bold;
+    border-color: #1A237E;
+}
+
+.image-display {
+    min-height: 250px;
+    background: #F9F9F9;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.image-display img {
+    width: 100%;
+    border: 1px solid #ccc;
+    object-fit: contain;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.pagination-controls button {
+    padding: 8px 20px;
+    background: #1A237E;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination-controls button:disabled {
+    opacity: 0.5;
+}
+
+/* --- Camera Section (User Test) --- */
+.test-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #F9F9F9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.tag {
+    background: #FF9800;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #1A237E;
+    font-weight: bold;
+}
+
+.class-output {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1A237E;
+}
+
+/* camera container (Flex setup to hold Video and Cropped Hand) */
+.camera-feed-container {
+    display: flex;
+    gap: 30px;
+    /* Space between the live feed and the cropped hand */
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+}
+
+/* Live Video Feed - Dimensions and styles */
+.camera-feed {
+    width: 640px;
+    height: 480px;
+    background-color: #000;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Position status text correctly within its parent (.camera-feed) */
+.camera-feed > #camera-status-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+}
+
+#live-camera-feed {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scaleX(-1);
+    /* Mirror effect */
+}
+
+/* Cropped Hand Display Styles */
+.cropped-hand-preview {
+    width: 200px;
+    height: 200px;
+    border: 3px solid #1A237E;
+    border-radius: 10px;
+    object-fit: contain;
+    background-color: #E0E0E0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* New Styles for Testing Page */
+.action-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #1A237E;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn:hover {
+    background-color: #304FFE;
+}
+
+.action-btn:disabled {
+    background-color: #9FA8DA;
+    cursor: wait;
+}
+
+.result-box {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    display: inline-block;
+    min-width: 250px;
+    text-align: left;
+}
+
+.status-badge {
+    margin-top: 10px;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #9E9E9E;
+}
