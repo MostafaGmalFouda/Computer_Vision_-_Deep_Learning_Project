@@ -1,0 +1,13 @@
+torch
+torchvision
+opencv-python
+mediapipe
+flask
+flask-cors
+numpy
+pillow
+matplotlib
+seaborn
+scikit-learn
+pandas
+ipykernel
