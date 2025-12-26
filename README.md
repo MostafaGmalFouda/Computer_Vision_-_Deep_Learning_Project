@@ -1,98 +1,87 @@
-# 🖐️ Hand Sign Recognition using Deep Learning & Computer Vision
+# 🖐️ ASL Hand Sign Recognition Project
 
-This project presents a complete **Computer Vision + Deep Learning pipeline** for recognizing hand signs (alphabets) from images and real-time webcam input.
+This project provides a comprehensive system for recognizing American Sign Language (ASL) alphabets using **Deep Learning** and **Computer Vision**. It includes a complete pipeline from data analysis to a real-time interactive Web Dashboard.
+
+---
+
+## 👥 Our Team
+
+| Name | Role | Responsibilities |
+| :--- | :--- | :--- |
+| **Moaz Ibrahim Abdallah El-Sayed** | **Team Leader** | Developed the Web Frontend, Backend (Flask API), and System Integration. |
+| **Mostafa Osama El-Sayed** | **Developer** | Handled Data Preprocessing and MediaPipe Hand Detection logic. |
+| **Mohamed Abdallah Mohamed** | **Developer** | Model Architecture design.|
+| **Mohamed El-Shourya** | **Developer** |Training.|
+| **Mostafa Gamal Fouda** | **Developer** | Evaluation, and Testing.|
+
 
 ---
 
-## 📌 Project Overview
-
-The system includes **data exploration, preprocessing, augmentation, CNN training, evaluation, and real-time inference**.  
-Goal: Build a robust hand sign recognition system.
-
----
 ## 📂 Dataset
-
-You can download the dataset from the following link:
-
+The dataset contains images for all 26 alphabets plus a "Blank" class. You can download it here:
 [Download ASL Hand Sign Dataset](https://drive.google.com/drive/folders/1FfNud8I6dCAJxmOqXhhuo45CkpinfuuD)
 
-**Notes:**
-- The dataset contains images of hand signs for all 26 alphabets plus a blank class.
-- Organize the dataset into folders per class as expected by the code:
+---
 
-## 🔍 Data Exploration (EDA)
-
-- Number of classes
-- Images per class
-- Image size statistics
-- Corrupted images detection
-- Visualization of:
-  - Image size distributions
-  - Class balance
-  - Sample images per class
+## 🛠️ Tech Stack
+* **Deep Learning:** PyTorch, Torchvision
+* **Computer Vision:** MediaPipe, OpenCV
+* **Backend:** Flask, Flask-CORS
+* **Frontend:** HTML5, CSS3, JavaScript
+* **Analysis:** NumPy, Matplotlib, Seaborn, Scikit-learn
 
 ---
 
-## ⚙️ Preprocessing & Augmentation
+## ⚙️ Development Pipeline
 
-**Hand Detection:** MediaPipe Hands (dynamic bounding box)  
-**Augmentations:** Brightness, contrast, blur, noise, rotation, perspective  
-**Final Image Size:** 128 × 128 RGB
+### 🔍 1. Exploratory Data Analysis (EDA)
+* Analyzing class distribution (26 letters + Blank).
+* Visualizing image size statistics and detecting corrupted files.
+* Sampling images to understand data diversity and class balance.
 
----
+### 🛠️ 2. Preprocessing & Augmentation
+* **Hand Detection:** Utilizing **MediaPipe Hands** to dynamically crop the image around the hand, reducing background noise and improving accuracy.
+* **Augmentation:** Applying brightness, contrast, rotation, and noise filters to improve model generalization.
+* **Normalization:** Resizing images to 128x128 pixels and applying Mean/Std normalization.
 
-## 🏗 Model Architecture
+### 🚀 3. Training Pipeline
 
-- 4 Convolutional Blocks (Conv + BatchNorm + ReLU + MaxPool)  
-- Fully connected classifier (Flatten → Dense → Dropout)  
-- Automatic flatten size calculation  
+* **Data Split:** 80% Training / 20% Validation split.
+* **Architecture:** A custom CNN with 4 Convolutional blocks (Conv + BatchNorm + ReLU + MaxPool) followed by a fully connected classifier with Dropout.
+* **Best Model:** Automatically saving the `best_model.pth` based on the highest validation accuracy during the training epochs.
 
-**Loss:** CrossEntropyLoss  
-**Optimizer:** Adam  
-**Scheduler:** ReduceLROnPlateau  
-
----
-
-## 🚀 Training Pipeline
-
-- 80% Train / 20% Validation split  
-- Training with mean/std normalization  
-- Best model saved automatically  
-
----
-
-## 📊 Evaluation
-
-- Loss curves  
-- Validation accuracy  
-- Test accuracy  
-- Confusion matrix  
-- Classification report  
-
----
-
-## 🎥 Real-Time Hand Sign Recognition
-
-- Webcam input
-- Real-time hand detection
-- Bounding box + class + confidence score
-- Color-coded confidence
-
-Press **`q`** to exit
-
----
-
-## 🛠 Tech Stack
-
-Python, PyTorch, OpenCV, MediaPipe, NumPy, Matplotlib, Seaborn, scikit-learn
+### 📊 4. Evaluation
+* **Metrics:** Tracking Loss Curves and Accuracy for both training and validation sets.
+* **Analysis:** Generating a **Confusion Matrix** to identify similar-looking signs and a full **Classification Report** (Precision, Recall, F1-Score).
 
 ---
 
 ## ▶️ How to Run
 
-```bash
-pip install -r requirements.txt
-python preprocessing.py
-python train.py
-python test.py
-python webcam_test.py
+> 💡 **Important Note:** Ensure all required libraries are installed before starting:
+> ```bash
+> pip install -r requirements.txt
+> ```
+
+### 1️⃣ Step 1: Model Training
+* Open the **Jupyter Notebook** (`model.ipynb`) provided in the project.
+* Update the dataset paths in the first cells to match your local directory.
+* Select **Run All Cells**. This will process the data, train the model, and save `best_model.pth`.
+
+### 2️⃣ Step 2: API Configuration
+* Open `main.py`.
+* Update the following paths to match your local folders:
+    * `RAW_DATASET_PATH`: Path to original images.
+    * `PROCESSED_DATASET_PATH`: Path to cropped/processed images.
+    * `TEST_FOLDER_PATH`: Path to the test dataset.
+    * `MODEL_PATH`: Path to the saved `best_model.pth`.
+
+### 3️⃣ Step 3: Start the Server
+* Run the Flask API from your terminal:
+    ```bash
+    python main.py
+    ```
+
+### 4️⃣ Step 4: Launch the Dashboard
+* Open `index.html` in your web browser.
+* You can now browse the dataset, run random tests, or use your webcam for real-time recognition.
