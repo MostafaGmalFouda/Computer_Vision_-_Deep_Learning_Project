@@ -8,11 +8,12 @@ This project provides a comprehensive system for recognizing American Sign Langu
 
 | Name | Role | Responsibilities |
 | :--- | :--- | :--- |
-| **Moaz Ibrahim Abdallah El-Sayed** | **Team Leader** | Developed the Web Frontend, Backend (Flask API), and System Integration. |
-| **Mostafa Osama El-Sayed** | **Developer** | Handled Data Preprocessing and MediaPipe Hand Detection logic. |
-| **Mohamed Abdallah Mohamed** | **Developer** | Model Architecture design.|
-| **Mohamed El-Shourya** | **Developer** |Training.|
-| **Mostafa Gamal Fouda** | **Developer** | Evaluation, and Testing.|
+| **[Moaz Ibrahim Abdallah El-Sayed](https://github.com/MoazIbrahem)** | **Team Leader** | Developed the Web Frontend, Backend (Flask API), and System Integration. |
+| **[Mostafa Osama El-Sayed](https://github.com/MustafaOsama)** | **Developer** | Handled Data Preprocessing and MediaPipe Hand Detection logic. |
+| **[Mohamed El-Shoura](https://github.com/MohammedElshora2005)** | **Developer** | Model Architecture design, Training, Evaluation, and Testing. |
+| **[Mohamed Abdallah Mohamed](https://github.com/mohamed78186)** | **Developer** | Model Architecture design, Training, Evaluation, and Testing. |
+| **[Mostafa Gamal Fouda](https://github.com/MostafaGmalFouda)** | **Developer** | Model Architecture design, Training, Evaluation, and Testing. |
+
 
 
 ---
