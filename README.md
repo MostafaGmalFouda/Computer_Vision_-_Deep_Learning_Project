@@ -4,6 +4,25 @@ This project provides a comprehensive system for recognizing American Sign Langu
 
 ---
 
+## 📝 Problem Definition
+
+American Sign Language (ASL) is a vital communication tool for the deaf and hard-of-hearing community. However, understanding and interpreting ASL manually can be time-consuming and prone to errors.
+
+Challenges addressed by this project:
+
+Variability in hand positions, angles, and orientations.
+
+Different lighting conditions and background noise in images and videos.
+
+The need for real-time recognition for interactive applications.
+
+Ensuring high accuracy across all 26 alphabet letters plus a "Blank" class.
+
+## Objective:
+Develop an automated system that can detect, preprocess, and classify hand signs in both static images and live webcam video using Deep Learning and Computer Vision techniques, providing accurate and reliable ASL recognition.
+
+---
+
 ## 👥 Our Team
 
 | Name | Role | Responsibilities |
